@@ -1,6 +1,10 @@
 import re
+import logging
 
 from locators.book_locator import BookLocators
+
+
+logger = logging.getLogger("scraping.book_parser")
 
 
 class BookParser:
@@ -18,6 +22,7 @@ class BookParser:
     }
 
     def __init__(self, parent) -> None:
+        logger.debug(f"New book parser created from `{parent}`.")
         self.parent = parent
 
     @property
